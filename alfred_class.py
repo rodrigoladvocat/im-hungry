@@ -3,6 +3,7 @@ import speech_recognition as sr   #converts speech to text
 from playsound import playsound    #plays .mp3 files
 import time
 from gtts_sounds import play_audio
+import web_launch
 
 class Alfred:
     
@@ -42,6 +43,8 @@ class Alfred:
         
         text = self.activate_mic()
         
+        time.sleep(2)
+        
         for word in text.split(' '):
             #if there is a quit word in text
             if word in self.quit_words:
@@ -58,25 +61,21 @@ class Alfred:
                 text = self.activate_mic()
                 
                 #ordering
-                if 'último' in text:
-                    print('ultimo')
-                    return
-                if 'rápido' in text:
-                    print('rapido')
-                    return
-                if 'padrão' in text:
-                    print('padrão')
-                    return
-                
-                play_audio('não entendi')
-                
-                return self.main_alfred(second_part=False)
+                for word in self.order_options:
+                    if word in text:
+                        web_launch.launch_ifood(order=word)
+                        return
+                    
+        play_audio('não entendi')
+        
+        return self.main_alfred(second_part=False)
         
     #constructor
     def __init__(self):
         self.init_words = ['pedido', 'comida', 'fome']      #list of 'positive for search' words
         self.order_words = ['normal', 'sempre', 'mesmo']
         self.quit_words = ['Cancelar', 'Parar', 'Cancela', 'Esquece']                         #list of 'negative for search' words => quit()
+        self.order_options = ['último', 'rápido', 'padrão']
         self.search = []    #array with searching parameters
         self.quit = False                                                                             #quit confirmation set to False
           
