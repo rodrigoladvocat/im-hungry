@@ -25,12 +25,12 @@ alguns botões são clicados, alguns redirecionamentos são feitos, blá blá bl
 ## Como rodo isso???
 
   Depois de instalar o python e todas as dependencias desse script, é necessário
-instalar o **msedgedriver** (driver do navegador Microsoft Edge), no entanto, o código pode
+instalar o **msedgedriver** (driver do navegador Microsoft Edge). No entanto, o código pode
 ser facilmente modificado para rodar no Chrome, ou em qualquer outro navegador. Após a enxurrada
 de instalações, é preciso ter uma credencial OAuth 2.0 e habilitar a API do GMail. Com a credencial
 OAuth 2.0, basta baixar o arquivo json como **client_secret.json** e mover para o diretório **atual**.
 Por fim, coloque seu endereço de e-mail do ifood em uma file **.env** e modifique os endereços de pedido
 no dicionário **order_options**.
 
-Ok, agora é só rodar o comando <sup>python alfred_class.py</sup> ou <sup>python3 alfred_class.py</sup>
+Ok, agora é só rodar o comando <sub>python alfred_class.py</sub> ou <sub>python3 alfred_class.py</sub>
 no terminal e fazer os pedidos!
