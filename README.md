@@ -32,5 +32,5 @@ OAuth 2.0, basta baixar o arquivo json como **client_secret.json** e mover para 
 Por fim, coloque seu endereço de e-mail do ifood em uma file **.env** e modifique os endereços de pedido
 no dicionário **order_options**.
 
-Ok, agora é só rodar o comando <sub>python alfred_class.py</sub> ou <sub>python3 alfred_class.py</sub>
+Ok, agora é só rodar o comando ***python alfred_class.py*** ou ***python3 alfred_class.py***
 no terminal e fazer os pedidos!
